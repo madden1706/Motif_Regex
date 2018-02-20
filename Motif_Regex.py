@@ -60,33 +60,9 @@ def domainsearch(x, y, z):   #x is the regex, y is the col to enter (as a string
                 z.loc[i, y] = str(df_list_search)
 
 
-            #seq = re.sub("\<.{0,100}match\='","" , str(i))
-            #seq = re.sub("'\>", "" , str(seq))
-            #print (seq)
-            #start = re.sub("\<.{0,150}span\=\(", "" , str(i))
-            #start = re.sub(", \d{4}.{0,100}>", "", str(start))
-            #print(start)
-            #end = re.sub("\<.{0,150}\d{4}, ", "", str(i))
-            #end = re.sub("\), match\=.{0,150}", "", str(end))
-            #print(end)
-            #it = "-".join([start, seq, end])
-            #print(it) #finditer does not work
-
-
-        '''if x.search(r["Sequence"]) is not None:
-                print(x.search(r["Sequence"]))
-                z.loc[i, y] = x.search(r["Sequence"]).group()
-                z.loc[i, '{}-Start'.format(y)] = x.search(r["Sequence"]).start()
-                z.loc[i, '{}-End'.format(y)] = x.search(r["Sequence"]).end()
-        else:
-            #z.loc[i, y] = "No"
-            pass''' # does not work for tandem elements
-
-
 domainsearch(MIU, "MIU", Input)
 domainsearch(ZHA, "ZHA", Input)
 domainsearch(UIM, "UIM", Input)
-#print(HomoSap.head())
 
 Input.to_csv("motif_regex_output.csv")
 
